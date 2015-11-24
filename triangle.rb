@@ -14,6 +14,29 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+
+	#raise TriangleError, "why the exception happened" if (a==0 or b==0 or c==0)
+
+
+ 	s = (a + b + c) / 2.0
+  
+	# test a valid triangle
+	valid = (s - a) * (s - b) * (s - c)
+  
+  	if a <= 0 || b <= 0 || c <= 0 || valid <= 0 then 
+    	raise TriangleError
+  	end
+
+	if (a==b) and (b==c)
+		return :equilateral
+	end
+	if (a==b) or (b==c) or (a==c)
+		return :isosceles
+	else
+		return :scalene
+	end
+
+
   # WRITE THIS CODE
 end
 
